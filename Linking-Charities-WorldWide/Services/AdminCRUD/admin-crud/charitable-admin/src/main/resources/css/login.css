@@ -1,0 +1,465 @@
+body {
+    background-color: #dfecec !important;
+    border: none !important;
+}
+
+.clear{
+    clear:both;
+}
+
+.carousel .item {
+    height: 250px;
+}
+
+.item img {
+    top: 0;
+    left: 0;
+    min-height: 250px;
+}
+
+
+.visible-xs-block {
+    padding-bottom: 20px !important;
+}
+
+#bigCallout .btn-default {
+    background-color: #29293D !important;
+}
+
+#bigCallout .btn-default span  {
+    color: white !important;
+}
+
+.panel-body {
+    text-align: center;
+}
+
+#blog-img {
+    float: left;
+    margin-right: 15px;
+}
+
+#main-img {
+    text-align: center;
+}
+
+#article-snippet-img {
+    margin-left: 10%;
+}
+
+#article-snippet-img {
+    margin-left: 10%;
+}
+
+.read-more {
+    margin-top: 10px;
+}
+
+#featuresHeading {
+    height: 230px;
+}
+
+#scroll-info {
+    height: 230px;
+    overflow: scroll;
+}
+
+#main-img-features {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 8px;
+}
+
+#newest-game {
+    text-align: justify;
+    margin-right: 10px;
+}
+
+#more-info-photo {
+    text-align: center;
+    float: left;
+}
+
+#more-info li{
+    list-style: none;
+}
+
+#watchOnlineButtons {
+    float: center;
+    list-style: none;
+    text-align: center;
+    margin: 10px;
+}
+
+#event-single {
+    padding: 0 !important;
+}
+
+
+#more-info {
+    padding-right: 5px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#game-name-events h3 {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    padding: 0 !important;
+}
+
+#this-carousel-id {
+    margin-bottom: 20px;
+}
+
+
+#article-snippet {
+    margin-top: 10px;
+}
+
+#article-snippet-img {
+    text-align: center !important;
+}
+
+#features {
+    margin-top: 10px;
+}
+
+#readMoreBtn {
+    margin-bottom: 10px;
+}
+
+#panel-heading1 {
+    background-color: #20B2AA!important;
+}
+
+#panel-heading2 {
+    background-color: #4682B4 !important;
+}
+
+#panel-heading3 {
+    background-color: #7AA3CC !important;
+}
+
+.read-more {
+    text-align: center;
+}
+
+#news-alone {
+    margin-top: 20px;
+}
+
+#post-body-news {
+    text-align: justify !important;
+}
+
+#post-image {
+    float: left;
+}
+
+#scrollable-news {
+    height: 1275px;
+    overflow-y: scroll;
+}
+
+#scrollable-all {
+    height: 1370px;
+    margin-bottom: 20px;
+}
+
+.glyphicon {
+    margin-right: 2px;
+}
+
+#event-post {
+    padding-left: 20px !important;
+    padding-right: 20px;
+    padding-bottom: 0 !important;
+}
+
+#share-container {
+    margin-left: -20px;
+    margin-top: -12px;
+    margin-bottom: 0;
+    padding-bottom: -20px !important;
+    background-color: #ffffff   !important;
+    width: 728px;
+    text-align: center !important;
+}
+
+.scrolling-container {
+    width: 100%;
+    height: 600px;
+    overflow: scroll;
+}
+
+
+/* --------------------------------------
+   Typography
+   -------------------------------------- */
+.well .panel-header {
+    margin-top: 0;
+}
+
+.well .panel-header h1{
+    margin-top: 0;
+}
+
+.no-gutter {
+    padding-right:0 !important;
+    padding-left:0 !important;
+}
+
+.no-gutter-horizontal {
+    padding-top: 0 !important;
+    padding-bottom: 1em !important;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+}
+
+.panel-title {
+    text-align: center;
+}
+
+.posts {
+    text-align: left;
+}
+
+.post-title {
+    text-align: left;
+    padding-top: 0;
+}
+
+.post-info {
+    text-align: left;
+}
+
+.post-body {
+    text-align: left;
+}
+
+.newest-game {
+    text-align: left;
+}
+
+#more-info-photo {
+    margin-right: 10px;
+}
+
+#event-post {
+    text-align: justify;
+    background-color: #F8F8F8;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+.navbar-brand {
+    text-align: left;
+}
+
+.dropdown-menu {
+    background-color: #282828 !important;
+}
+
+.dropdown-menu a{
+    color: #D0D0D0 !important;
+}
+
+
+/* --------------------------------------
+   Footer
+   -------------------------------------- */
+footer {
+
+    color: #eee;
+    font-size: 11px;
+    padding: 0px;
+
+}
+
+#footer-container {
+    background: #29293D;
+}
+
+ul.unstyled {
+    list-style: none;
+    padding: 0;
+}
+
+.newsletter {
+    background-color: gray !important;
+}
+
+
+.share-buttons {
+    background: gray;
+    padding-bottom: 0px !important;
+}
+
+
+.sharing-buttons{
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+.sharing-buttons li{
+    display: inline;
+}
+
+.sharing-buttons a{
+    border: 1px solid;
+    padding: 0.5em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.sharing-buttons a:hover{
+    color: #eee;
+    text-decoration: none;
+}
+
+.fa{
+    padding: 0.5em;
+}
+
+.facebook{
+    background: #3B5998;
+}
+
+.twitter{
+    background: #00ACED;
+}
+
+.google-plus{
+    background: #D14836
+}
+
+#share-buttons img {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    box-shadow: 0;
+    display: inline;
+    text-align: left;
+}
+
+#share-buttons-footer img {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    box-shadow: 0;
+    display: inline;
+    text-align: left;
+    opacity: 0.5 !important;
+}
+
+.control-group {
+    opacity: 0.5 !important;
+}
+
+.help-block {
+    color: white !important;
+    opacity: 0 !important;
+}
+
+.blue2 {
+    background-color: #36a9c9 !important;
+}
+
+.dark-blue2 {
+    background-color: mediumpurple !important;
+}
+
+.with-margins {
+    margin: 2% 5% 2% 3%;
+}
+
+.top-margin-cut {
+    margin-top: 2%;
+}
+
+.img-crop {
+    margin-bottom: -3%;
+}
+
+.collapse1{
+    cursor: pointer;
+}
+.collapse1 + input{
+    display: none; /* hide the checkboxes */
+}
+.collapse1 + input + div{
+    display:none;
+}
+.collapse1 + input:checked + div{
+    display:block;
+}
+
+.white {
+    background-color: #ffffff !important;
+}
+
+.no-right-margin {
+    margin-right: 0 !important;
+    padding-right: -5px !important;
+}
+
+.no-left-margin {
+    margin-left: 0 !important;
+    padding-left: -5px !important;
+}
+
+/* --------------------------------------
+   Global Styles
+   -------------------------------------- */
+
+
+* {
+    text-align: justify;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+hr {
+    height: 1px;
+    background-color: #dcdcdc;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* --------------------------------------
+   Media Queries
+   -------------------------------------- */
+
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
+
+.form-container{
+    width: 250px !important;
+    height: 250px !important;
+    margin-top: 4%;
+}

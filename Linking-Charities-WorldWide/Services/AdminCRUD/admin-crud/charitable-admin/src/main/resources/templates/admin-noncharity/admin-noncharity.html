@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Charitable - view charity details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- Bootstrap 3 -->
+    <link href="../../static/bootstrap-3/css/bootstrap.min.css"
+          th:href="@{/bootstrap-3/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+
+    <!-- Custom Style-->
+    <link href="../../static/css/admin-style.css"
+          th:href="@{/css/admin-style.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/search.css"
+          th:href="@{/css/search.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/admin-style.css"
+          th:href="@{/css/general-style.css}" rel="stylesheet" media="screen" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+<!--Header"-->
+<span th:replace="fragments/admin-noncharity :: admin-noncharity"></span>
+
+
+
+<!-- Main Content -->
+<div class="container-fluid">
+    <div class="side-body">
+        <div class="panel-heading blue2" style="margin: 3%;"><!--header-->
+            <h3 class="orator-header text-center"><span class="glyphicon glyphicon-wrench"></span> Welcome to Admin Portal</h3>
+        </div>
+
+        <div class="container-fluid">
+
+        <div class="col-xs-3">
+        <div class="panel panel-default"><!--Sort box"-->
+            <div class="panel-heading green"><!--header-->
+                <h3 class="panel-title">Verified Charities</h3>
+            </div><!--end of header-->
+            <div class="panel-body no-gutter-horizontal"><!--sort body-->
+               <h1 class="text-center" th:text="${verifiedChar}"></h1>
+            </div><!--End of sort body-->
+        </div><!--End of sort box-->
+        </div>
+
+            <div class="col-xs-3">
+                <div class="panel panel-default"><!--Sort box"-->
+                    <div class="panel-heading green"><!--header-->
+                        <h3 class="panel-title">Flagged Charities</h3>
+                    </div><!--end of header-->
+                    <div class="panel-body no-gutter-horizontal"><!--sort body-->
+                        <h1 class="text-center" th:text="${notVerifiedChar}">25</h1>
+                    </div><!--End of sort body-->
+                </div><!--End of sort box-->
+            </div>
+
+            <div class="col-xs-3">
+                <div class="panel panel-default"><!--Sort box"-->
+                    <div class="panel-heading green"><!--header-->
+                        <h3 class="panel-title">Total Charities</h3>
+                    </div><!--end of header-->
+                    <div class="panel-body no-gutter-horizontal"><!--sort body-->
+                        <h1 class="text-center" th:text="${total}">1234</h1>
+                    </div><!--End of sort body-->
+                </div><!--End of sort box-->
+            </div>
+
+            <div class="col-xs-3">
+                <div class="panel panel-default"><!--Sort box"-->
+                    <div class="panel-heading green"><!--header-->
+                        <h3 class="panel-title">Registered Users</h3>
+                    </div><!--end of header-->
+                    <div class="panel-body no-gutter-horizontal"><!--sort body-->
+                        <h1 class="text-center">15</h1>
+                    </div><!--End of sort body-->
+                </div><!--End of sort box-->
+            </div>
+
+        <div class="col-xs-6">
+        <div class="panel panel-default"><!--Featured charities box"-->
+            <div class="panel-heading pink"><!--Header"-->
+                <h3 class="panel-title"><span class="glyphicon glyphicon-bullhorn"></span> Recently approved charities</h3>
+            </div><!--End of header-->
+            <div class="panel-body" style="margin-top: 0;padding-top: 0"><!--Body of featured-->
+                <th:block th:each="featured : ${featured}"><!--loop start-->
+                    <br />
+                    <div class="card-small">
+                        <h5 class="orator-header-small"><a th:href="@{'/view-charity'(id=${featured.id})}"><td th:text="${featured.charityName}">name</td></a></h5>
+                        <hr style="margin-right:5%;" />
+                        <strong class="orator-header-medium-small" style="color: #808080;">Supported causes: </strong> <span style="background-color: white;"> </span> <li th:each="item : ${featured.categoryList}" th:text="${item}" class="label label-info small" th:include="fragments/tagTemplate :: tagTemplate">Item</li>
+                    </div>
+                </th:block><!--loop end-->
+                <div class="read-more"></div><!--end of read more-->
+            </div><!--End of body of featured-->
+        </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="panel panel-default"><!--Featured charities box"-->
+                <div class="panel-heading pink"><!--Header"-->
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-flag"></span> Recent activities</h3>
+                </div><!--End of header-->
+                <div class="panel-body"><!--Body of featured-->
+                    <div class="read-more"></div><!--end of read more-->
+                </div><!--End of body of featured-->
+            </div><!--End of featured charities box-->
+        </div>
+        </div>
+</div>
+</div>
+
+<script>
+    $(function () {
+        $('.navbar-toggle').click(function () {
+            $('.navbar-nav').toggleClass('slide-in');
+            $('.side-body').toggleClass('body-slide-in');
+            $('#search').removeClass('in').addClass('collapse').slideUp(200);
+
+            /// uncomment code for absolute positioning tweek see top comment in css
+            //$('.absolute-wrapper').toggleClass('slide-in');
+
+        });
+
+        // Remove menu for searching
+        $('#search-trigger').click(function () {
+            $('.navbar-nav').removeClass('slide-in');
+            $('.side-body').removeClass('body-slide-in');
+
+            /// uncomment code for absolute positioning tweek see top comment in css
+            //$('.absolute-wrapper').removeClass('slide-in');
+
+        });
+    });
+</script>
+
+<!-- Scripts -->
+<script type="text/css" src="../../bootstrap-3/js/bootstrap.min.js" th:href="@{/bootstrap-3/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

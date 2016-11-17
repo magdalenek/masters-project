@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Charitable - User Portal</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width" />
+    <base href="/" />
+    <link rel="stylesheet" type="text/css"
+          href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css"
+          href="css/general-style.css" />
+    <link rel="stylesheet" type="text/css"
+          href="css/add-charity2.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript"
+            src="js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+            src="js/scrolling-nav.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="css/admin-style.css" />
+</head>
+<body ng-app="app" ng-controller="home as home">
+<!--NAVBAR-->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <img class="img-responsive" src="img/heart-gray.png" style="display: inline;" alt="" width="5%" height="5%"></img>
+                <p class="orator-header-small" style="display: inline;" >CHARITABLE</p>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a class="page-scroll" href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll pull-right" href="http://localhost:9051/search"><p class="orator-header-small" style="display: inline;" >Donate</p></a>
+                </li>
+                <li>
+                    <a class="page-scroll pull-right" href="#register"><p class="orator-header-small" style="display: inline;" >Register</p></a>
+                </li>
+                <li>
+                    <a class="page-scroll pull-right" href="/admin/main?id=57a416993004ffd1bbafd6f4"><p class="orator-header-small" style="display: inline;" > Login</p></a>
+                </li>
+            </ul><!-- end dropdown-menu -->
+        </div>
+    </div>
+</nav>
+
+<div class="container" ng-show="!home.authenticated">
+    <div class="container" width="500px" height="500px">
+        <div class="container-fluid" width="500px" height="500px">
+            <div class="container-fluid light-blue">
+                <div class="container form-container form-small" width="500px" height="500px">
+                    <div class="result" width="500px" height="500px"></div>
+                    <div class="blue2 top-margin-cut"><!--Header content container-->
+                        <img src="/img/settings2.png" class="img-responsive img-circle center-block" width="100px" height="100px" />
+                        <h6 class="orator-header-medium text-center">Facebook Login</h6>
+                    </div><!--Header content container-->
+                    <div class="myBackground" >
+                        <a href="/login" style="margin-left: 35%" class="btn btn-primary">Login</a>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" ng-show="home.authenticated">
+
+    Logged in as: <span ng-bind="home.user"></span>
+    <div>
+        <button ng-click="home.logout()" class="btn btn-primary">Logout</button>
+    </div>
+</div>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript">
+    angular
+            .module("app", [])
+            .config(
+            function($httpProvider) {
+                $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+            }).controller("home", function($http, $location) {
+                var self = this;
+                $http.get("/user").success(function(data) {
+                    self.user = data.userAuthentication.details.name;
+                    self.authenticated = true;
+                }).error(function() {
+                    self.user = "N/A";
+                    self.authenticated = false;
+                });
+                self.logout = function() {
+                    $http.post('logout', {}).success(function() {
+                        self.authenticated = false;
+                        $location.path("/");
+                    }).error(function(data) {
+                        console.log("Logout failed")
+                        self.authenticated = false;
+                    });
+                };
+            });
+</script>
+<!--Footer-->
+<footer style="margin-top: 15%">
+    <div class="container">
+        <div class="row">
+            <div class="container" id="footer-container">
+                <div class="col-sm-12">
+                    <div class="container" id="first-footer">
+                        <div class="col-sm-2">
+                            <h6>Copyright &copy; 2016</h6>
+                            <p>ms915@imperial.ac.uk
+                                Designed by Magdalena for Imperial College project.</p>
+                        </div>
+                        <div class="col-sm-3 visible-sm visible-md visible-lg">
+                            <h6>About Charitable</h6>
+                            <p>Charitable is a proof-of concept application designed for the Msc Computer Science Individual Project module at Imperial College London. Forgive imperfections. </p>
+                            <div class="control-group">
+                                <div class="controls">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 visible-sm visible-md visible-lg">
+                            <h6>Other Links</h6>
+                            <ul class="unstyled">
+                                <li><a href="http://localhost:9051/admin-login.html">Charitable Admin</a></li>
+                                <li><a href="">Info</a></li>
+                                <li><a href="">Contact</a></li>
+                                <li><a href="">Feedback</a></li>
+                                <li><a href="">Sponsors</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-2">
+                            <h6>Follow</h6>
+                            <div id="share-buttons-footer">
+                                <ul class="unstyled">
+
+                                    <!-- Facebook -->
+                                    <a href="http://www.facebook.com/sharer.php?u=http://www.simplesharebuttons.com" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />Facebook<br></a>
+
+                                    <!-- Twitter -->
+                                    <a href="http://twitter.com/share?url=http://www.simplesharebuttons.com&text=Simple Share Buttons&hashtags=simplesharebuttons" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />Twitter<br></a>
+
+                                    <!-- Google+ -->
+                                    <a href="https://plus.google.com/share?url=http://www.simplesharebuttons.com" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/google.png" alt="Google" />Google+</a>
+                            </div>
+                            </ul>
+                        </div>
+                        <div class="col-sm-2 visible-sm visible-md visible-lg">
+                            <h6>Legal jargon</h6>
+                            <p>Images <a href="http://www.freepik.com">designed by Freepik</a></p>
+                            <p>Work in progress - do not sue :)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</footer>
+</body>
+</html>

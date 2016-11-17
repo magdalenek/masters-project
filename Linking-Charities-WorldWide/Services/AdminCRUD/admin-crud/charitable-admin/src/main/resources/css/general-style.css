@@ -1,0 +1,282 @@
+@font-face {
+    font-family: OratorStd;
+    src: url(../fonts/OratorStd.otf);
+}
+
+body {
+    background-color: antiquewhite;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+
+.banner{
+    background-color: darkred;
+    margin-top: 2%;
+    margin-bottom: 0;
+}
+
+.banner-font{
+    color: #000000;
+}
+
+.large-input {
+    width: 750px !important;
+}
+
+.light-blue{
+    background-color: #dfecec !important;
+}
+
+.blue{
+    background-color: #dbf0db !important;
+    padding-bottom: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.dark-blue {
+    background-color: #0066cc !important;
+    margin-top: 5%;
+}
+
+.white {
+    background-color: #ffffff !important;
+}
+
+.green {
+    background-color: seagreen !important;
+}
+
+.baby-blue {
+    background-color: #87CDDE !important;
+}
+
+.pink {
+    background-color: #ff9999 !important;
+}
+.img-circled {
+    border-radius: 50% !important;
+}
+
+.orator-header {
+    font-family: OratorStd;
+    font-size: 45px;
+}
+
+.orator-header-medium {
+    font-family: OratorStd;
+    font-size: 25px;
+}
+
+.orator-header-small {
+    font-family: OratorStd;
+    font-size: 18px;
+}
+
+.orator-header-medium-small {
+    font-family: OratorStd;
+    font-size: 15px;
+}
+
+.orator-header-super-small {
+    font-family: OratorStd;
+    font-size: 13px;
+}
+
+.bullet-points {
+    list-style-type: circle;
+}
+
+.middle-text {
+    vertical-align: middle !important;
+    display: inline-block !important;
+}
+
+.col-center{
+    margin:0 auto !important;
+    position: absolute;
+}
+
+.align-middle {
+    margin-top: 25%;
+    margin-bottom: 25%;
+}
+
+.purple {
+    background-color: #AA87DE;
+    margin-top: 5%;
+}
+
+.tanned {
+    background-color: #F5E1D1;
+}
+
+.squashed {
+    margin: 0 10% 10%;
+}
+
+.center {
+    display:table-cell;
+    vertical-align:middle;
+    float:none;
+}
+
+.center-for-text {
+    margin-top: 10%;
+}
+
+.side {
+    margin-left: 5%;
+}
+
+.no-bottom {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+footer {
+
+    color: #eee;
+    font-size: 11px;
+    padding: 0px;
+
+}
+
+#footer-container {
+    background: #29293D;
+}
+
+ul.unstyled {
+    list-style: none;
+    padding: 0;
+}
+
+.newsletter {
+    background-color: gray !important;
+}
+
+
+.share-buttons {
+    background: gray;
+    padding-bottom: 0px !important;
+}
+
+
+.sharing-buttons{
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+.sharing-buttons li{
+    display: inline;
+}
+
+.sharing-buttons a{
+    border: 1px solid;
+    padding: 0.5em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.sharing-buttons a:hover{
+    color: #eee;
+    text-decoration: none;
+}
+
+.fa{
+    padding: 0.5em;
+}
+
+.facebook{
+    background: #3B5998;
+}
+
+.twitter{
+    background: #00ACED;
+}
+
+.google-plus{
+    background: #D14836
+}
+
+#share-buttons img {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    box-shadow: 0;
+    display: inline;
+    text-align: left;
+}
+
+#share-buttons-footer img {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    box-shadow: 0;
+    display: inline;
+    text-align: left;
+    opacity: 0.5 !important;
+}
+
+#share-buttons-page img {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border: none;
+    box-shadow: 0;
+    display: inline;
+    text-align: left;
+    border-radius: none !important;
+}
+
+.control-group {
+    opacity: 0.5 !important;
+}
+
+.help-block {
+    color: white !important;
+    opacity: none !important;
+}
+
+
+.featurette-divider {
+    margin: 40px 0;
+}
+
+.hr2 {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+    border-style: solid none;
+    border-width: 1px 0;
+    margin: 18px 0;
+}
+
+.featurette {
+    overflow: hidden;
+    margin: 2% 10%;
+}
+
+.featurette-image.pull-left {
+    margin-right: 40px;
+}
+
+.featurette-image.pull-right {
+    margin-left: 30%;
+}
+
+.center-main {
+    margin-left: 15% !important;
+}
+
+.featurette-heading {
+    font-size: 30px;
+}
