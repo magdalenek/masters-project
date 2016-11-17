@@ -1,4 +1,4 @@
-# Msc Computer Science Individual Project
+# MSc Computer Science Individual Project
 
 **Linking Charities Worldwide - MSc Computer Science Imperial College London Individual Project**
 
