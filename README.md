@@ -1,16 +1,18 @@
-# masters-project
+# Msc Computer Science Individual Project
 
-**Linking Charities Worldwide
-MSc Computer Science Imperial College London Individual Project**
+**Linking Charities Worldwide - MSc Computer Science Imperial College London Individual Project**
 
-![Add](https://gfycat.com/DisastrousSkinnyGoral)
+![Main](https://github.com/magdalenek/masters-project/raw/master/project-sample/view/main.gif)
 
 
-**Project Summary:**
+**Project Summary:** There is a large number of non-profit organisations operating around the world, with over 165,000 registered bodies in UK solely. However, a majority of all the yearly funds of more than 250 billion dollars raised by individuals collectively are distributed almost exclusively between a small number of non-profit organisations - those that are either the largest, or have the greatest media presence. 
+
+The aim of this project was to develop a proof-of-concept product, providing the non-profit organisations around the world with an option to list themselves in an online platform. The intent behind the platform was to present the smaller charities with much needed exposure that they cannot often afford and so desperately need. Such a solution was additionally intended to provide the potential donors with an alternative choice of charities to donate to, and as a result helping twice - aiding the chosen cause and the charity as such.
+
 
 **Selected Technologies Used:**
-**Front End:** Custom css design with Twitter Bootstrap, vanilla JavaScript, jQuery, d3.js, Thymeleaf.
-**Back end:** Spring Boot, MongoDb, JavaMail, RESTful API.
++ Front End: Custom css design with Twitter Bootstrap, vanilla JavaScript, jQuery, d3.js, Thymeleaf.
++ Back end: Spring Boot, MongoDb, JavaMail, RESTful API.
 
 **Main Features:**
 - Interactive selection of country the charity resides in from the animated globe
@@ -23,3 +25,5 @@ MSc Computer Science Imperial College London Individual Project**
   -	Custom admin panel to manage and manually approve charity registrations
   -	Live filtering of data conducted in the front end
   -	Note-taking available for each entry
+  
+![Admin](https://github.com/magdalenek/masters-project/raw/master/project-sample/view/admin.gif)
