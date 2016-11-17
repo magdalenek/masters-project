@@ -20,12 +20,6 @@ public class LandingPageApplication {
 		return "main.html";
 	}
 
-	@RequestMapping("/hello")
-	public String servePage2() {
-		return "hi.html";
-	}
-
-
 	public static void main(String[] args) {
 		SpringApplication.run(LandingPageApplication.class, args);
 	}
