@@ -2,7 +2,7 @@
 
 **Linking Charities Worldwide - MSc Computer Science Imperial College London Individual Project**
 
-![Main](https://github.com/magdalenek/masters-project/raw/master/project-sample/view/main.gif)
+![Main](https://github.com/magdalenek/masters-project/raw/master/Linking-Charities-WorldWide/housekeeping/view/main.gif)
 
 
 **Project Summary:** There is a large number of non-profit organisations operating around the world, with over 165,000 registered bodies in UK solely. However, a majority of all the yearly funds of more than 250 billion dollars raised by individuals collectively are distributed almost exclusively between a small number of non-profit organisations - those that are either the largest, or have the greatest media presence. 
@@ -12,7 +12,7 @@ The aim of this project was to develop a proof-of-concept product, providing the
 
 **Selected Technologies Used:**
 + Front End: Custom css design with Twitter Bootstrap, vanilla JavaScript, jQuery, d3.js, Thymeleaf.
-+ Back end: Spring Boot, MongoDb, JavaMail, RESTful API.
++ Back End: Spring Boot, MongoDb, JavaMail, RESTful API.
 
 
 **Architecture Design:**
@@ -31,4 +31,4 @@ The aim of this project was to develop a proof-of-concept product, providing the
   -	Live filtering of data conducted in the front end
   -	Note-taking available for each entry
   
-  ![Admin](https://github.com/magdalenek/masters-project/raw/master/project-sample/view/admin.gif)
+  ![Admin](https://github.com/magdalenek/masters-project/raw/master/Linking-Charities-WorldWide/housekeeping/view/admin.gif)
