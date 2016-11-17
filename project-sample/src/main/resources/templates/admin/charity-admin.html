@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Charitable - view charity details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- Bootstrap 3 -->
+    <link href="../../static/bootstrap-3/css/bootstrap.min.css"
+          th:href="@{/bootstrap-3/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+
+    <!-- Custom Style-->
+    <link href="../../static/css/admin-style.css"
+          th:href="@{/css/admin-style.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/search.css"
+          th:href="@{/css/search.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/admin-style.css"
+          th:href="@{/css/general-style.css}" rel="stylesheet" media="screen" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+<!--Header"-->
+<span th:replace="fragments/adminheader :: adminheader"></span>
+
+
+
+<!-- Main Content -->
+<div class="container-fluid">
+    <div class="side-body">
+        <div class="panel-heading blue2" style="margin: 3%;"><!--header-->
+            <h3 class="orator-header text-center"><span class="glyphicon glyphicon-wrench"></span> Hello, <span th:text="${charity.charityContactName} "></span> !</h3>
+        </div>
+       <p>Welcome to your Charity Panel! Here you can preview, edit and update your profile. If you need any assistance, please use contact us.  </p>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.navbar-toggle').click(function () {
+            $('.navbar-nav').toggleClass('slide-in');
+            $('.side-body').toggleClass('body-slide-in');
+            $('#search').removeClass('in').addClass('collapse').slideUp(200);
+
+            /// uncomment code for absolute positioning tweek see top comment in css
+            //$('.absolute-wrapper').toggleClass('slide-in');
+
+        });
+
+        // Remove menu for searching
+        $('#search-trigger').click(function () {
+            $('.navbar-nav').removeClass('slide-in');
+            $('.side-body').removeClass('body-slide-in');
+
+            /// uncomment code for absolute positioning tweek see top comment in css
+            //$('.absolute-wrapper').removeClass('slide-in');
+
+        });
+    });
+</script>
+
+<!-- Scripts -->
+<script type="text/css" src="../../bootstrap-3/js/bootstrap.min.js" th:href="@{/bootstrap-3/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

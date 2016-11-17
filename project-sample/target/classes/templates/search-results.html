@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Charitable - view charity details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Bootstrap 3 -->
+    <link href="../../static/bootstrap-3/css/bootstrap.min.css"
+          th:href="@{/bootstrap-3/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+    <!-- Custom Style-->
+    <link href="../../static/css/general-style.css"
+          th:href="@{/css/general-style.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/search.css"
+          th:href="@{/css/search.css}" rel="stylesheet" media="screen" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<!--Header"-->
+<span th:replace="fragments/headerinc :: headerinc"></span>
+
+<!--Main container"-->
+<div class="container padding-top">
+
+    <!--Main row-->
+    <div class="row">
+        <div class="blue2 top-margin-cut" style="margin-right: 1.4%"><!--Header content container-->
+            <img th:src="@{/img/search6.png}" class="img-responsive img-crop" />
+            <h6 class="orator-header text-center">Your search results</h6>
+        </div><!--Header content container-->
+        <!--Left column grid-->
+        <div class="col-sm-8 white" style="margin: 0;padding: 0">
+            <div class="white">
+                <!--Results box grammar-->
+                <div class="blue2" style="margin: 0; padding: 1%">
+                    <div th:if="${numberOfResults} eq 0">
+                        <h3 class="text-center orator-header-medium"> No charities found for  <td th:text="${searchQuery}">Test</td> :( </h3>
+                    </div>
+                    <div th:if="${numberOfResults} eq 1">
+                        <h3 class="text-center orator-header-medium"> <td th:text="${numberOfResults}"></td> charity found for  <td th:text="${searchQuery}"></td></h3>
+                    </div>
+                    <div th:if="${numberOfResults} gt 1">
+                        <h3 class="text-center orator-header-medium"> <td th:text="${numberOfResults}"></td> charities found for  <td th:text="${searchQuery}"></td></h3>
+                    </div>
+                </div><!--end results box grammar-->
+            </div>
+
+
+
+            <!--No results warning-->
+            <div th:if="${numberOfResults} eq 0">
+                <div class="well-sm event-post"><!--small well container-->
+                    <div class="container" id="share-container"><!--body container-->
+                        <h4 class="post-title">Please search again using our super duper search tool :)</h4>
+                        <p>You can also sign up to our super duper newsletter!</p>
+                    </div><!--body container-->
+                </div><!--End small well container-->
+            </div><!--End of no results warning-->
+            <div class="scrolling-container no-gutter-no">
+                <!--Results cards-->
+                <th:block th:each="charity : ${charities}"><!--loop start-->
+                    <div class="card">
+                        <h4 class="orator-header-small"><a th:href="@{'/view-charity'(id=${charity.id})}"><td th:text="${charity.charityName}">name</td></a></h4>
+                        <h5><span class="glyphicon glyphicon-heart"></span><td th:text="'There are ' + ${charity.employeesNo} + ' employees'">Test</td> &emsp; &emsp;<span class="glyphicon glyphicon-globe"></span><td th:text="${charity.charityAddress}">Test</td> &emsp; &emsp;<span class="glyphicon glyphicon-usd"></span><td th:text="'Has ' + ${charity.averageDonations} + ' available donation funds a year' ">Test</td>
+                        </h5>
+                        <p class="small" id="more-info">
+                        <li><strong>About: </strong><td th:text="${charity.charityShortDescription}">Test</td></li><br />
+                        <hr />
+                        <span class="orator-header-super-small" style="color: #808080;">Supported causes: </span><span style="background-color: white;"> </span> <li th:each="item : ${charity.categoryList}" th:text="${item}" class="label label-info small" th:include="fragments/tagTemplate :: tagTemplate">Item</li>
+                        </p>
+                    </div>
+                </th:block><!--loop end-->
+            </div>
+
+
+
+
+        </div>
+
+
+
+        <div class="col-sm-4">
+            <div class="white" style="margin-left:2%;margin-right: 0;margin-top:0;margin-bottom:0;padding:0;">
+                <div class="blue2" style="margin: 0;padding-top: 5.3%;padding-bottom: 5.3%"><!--Search again box"-->
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="search_input">&nbsp;&nbsp;<span class="glyphicon glyphicon-search"></span> Try again:&nbsp;</label>
+                            <input  type="text" id="search_input" class="form-control" width="70%" />
+                        </div>
+                        <button onclick="doAjax()" type="button" class="btn btn-danger">Search</button>
+                    </form>
+                </div><!--end of searched for-->
+                <script th:inline="javascript">
+                    /*<![CDATA[*/
+                    function doAjax() {
+                        var searchQuery = document.getElementById("search_input").value;
+                        var sort = null;
+
+                        var radios = document.getElementsByName("optradio");
+                        var length = radios.length;
+
+                        for(index = 0; index < length; index++){
+                            if(radios[index].checked){
+                                sort = radios[index].value;
+                            }
+                        }
+
+                        var url = "/search?searchQuery=" + searchQuery + "&charSort=" + sort;
+                        console.log("redirecting to " + url);
+                        window.location.href = url;
+                    }
+                    /*]]>*/
+                </script>
+                <div class="white" style="padding: 0 5%;">
+                    <h3 class="orator-header-small"><span class="glyphicon glyphicon-sort"></span> Sort Results</h3>
+                    <hr style="margin-right: 5%;margin-left: 3%"/>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" value="size" />Sort by size</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" value="donations"/>Sort by donations</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" value="ascending" />Sort by name</label>
+                    </div>
+                    <a onclick="sendSortVal();" class="btn btn-large btn-primary">&nbsp;&nbsp;Sort &nbsp;&nbsp;</a>
+                    <br />
+                    <br />
+
+
+                    <script>
+                        function sendSortVal() {
+                            if($('[name="optradio"]').is(':checked')){
+                                var checkValue = document.getElementsByName("optradio");
+                                var charSort = checkValue[0].value;
+                                console.log(charSort);
+                                $.ajax({
+                                    url: window.location.href + "&amp;charSort=" + charSort,
+                                    type: 'GET',
+                                    data: {
+                                        charSort:  charSort
+                                    }
+                                }).success(function (data) {
+                                    window.location.href  =window.location.href + "&amp;" + "charSort=" + charSort;
+                                });
+                            };
+                        };
+
+                    </script>
+
+                    <h3 class="orator-header-small"><span class="glyphicon glyphicon-bullhorn"></span> Recently added charities</h3>
+                    <hr style="margin-right: 5%;"/>
+
+                    <th:block th:each="featured : ${featured}"><!--loop start-->
+                        <br />
+                        <div class="card-small">
+                            <h5 class="orator-header-medium-small"><a th:href="@{'/view-charity'(id=${featured.id})}"><td th:text="${featured.charityName}">name</td></a></h5>
+                            <hr style="margin-right:5%;" />
+                            <strong class="orator-header-super-small" style="color: #808080;">Supported causes: </strong> <span style="background-color: white;"> </span> <li th:each="item : ${featured.categoryList}" th:text="${item}" class="label label-info small" th:include="fragments/tagTemplate :: tagTemplate">Item</li>
+                        </div>
+                    </th:block><!--loop end-->
+                    <br />
+                </div>
+            </div>
+        </div>
+
+    </div><!--End Header container-->
+
+</div><!--End main container-->
+
+<div class="container">
+    <br />
+    <br />
+</div>
+<!--Footer-->
+<span th:replace="fragments/footer :: footer"></span>
+
+<!-- Scripts -->
+<script type="text/css" src="../../js/jquery-3.min.js" th:href="@{/js/jquery-3.min.js}"></script>
+<script type="text/css" src="../../bootstrap-3/js/bootstrap.min.js" th:href="@{/bootstrap-3/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Charitable - view charity details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- Bootstrap 3 -->
+    <link href="../../static/bootstrap-3/css/bootstrap.min.css"
+          th:href="@{/bootstrap-3/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+
+    <!-- Custom Style-->
+    <link href="../../static/css/admin-style.css"
+          th:href="@{/css/admin-style.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/search.css"
+          th:href="@{/css/search.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/add-charity.css"
+          th:href="@{/css/add-charity.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/admin-style.css"
+          th:href="@{/css/general-style.css}" rel="stylesheet" media="screen" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+<!--Header"-->
+<span th:replace="fragments/adminheader :: adminheader"></span>
+
+<!-- Page Content -->
+<div class="container-fluid">
+<div class="side-body">
+<div id="page-content-wrapper">
+    <div class="container-fluid light-blue" id="register">
+        <div class="container form-container">
+            <div class="result"></div>
+            <div class="myBackground card">
+                <form>
+                    <h2 class="text-center orator-header-medium"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Edit your charity details</h2>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="charityName" class=" form-control-label">Charity Name:</label><br/>
+                                <input type="text" id="charityName" class="wide-form" name="charityName" placeholder="Enter your charity name" th:value="${charity.charityName}"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="charityRegNumber" class="form-control-label">Charity Registration number:</label><br/>
+                                <input type="text" id="charityRegNumber" name="charityRegNumber" placeholder="Enter charity registration number" th:value="${charity.registrationNumber}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="charityContactName" class="form-control-label">Contact Name:</label><br/>
+                                <input type="text" id="charityContactName" name="charityContactName" placeholder="Enter contact name" th:value="${charity.charityContactName}"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="charityTel" class="form-control-label">Telephone number:</label><br/>
+                                <input type="tel" id="charityTel" name="charityTel" placeholder="Enter phone number" th:value="${charity.charityTel}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="charityAddress" class="form-control-label">Address of your charity:</label><br/>
+                                <input type="text" id="charityAddress" name="charityAddress" placeholder="e.g. Charity Street, Post Code, Country" th:value="${charity.charityAddress}"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="charityWebsiteName" class="form-control-label">Website:</label><br/>
+                                <input type="text" id="charityWebsiteName" name="charityWebsiteName" placeholder="Enter website" th:value="${charity.charityWebsiteName}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email" class="form-control-label">Email:</label><br/>
+                                <input type="text" id="email" name="averageDonations" placeholder="your.email@charity.com" th:value="${charity.charityEmail}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="employeesNo" class="form-control-label">No of employees (approximately):</label><br/>
+                                <input type="text" id="employeesNo" name="employeesNo" placeholder="e.g. 10" th:value="${charity.employeesNo}"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="averageDonations" class="form-control-label">Average yearly income available for donations (in pounds):</label><br/>
+                                <input type="text" id="averageDonations" name="averageDonations" placeholder="e.g. 150000" th:value="${charity.averageDonations}"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="charityShortDescription" class=" form-control-label">Short description of charity: <span class="glyphicon glyphicon-question-sign" data-toggle="collapse" data-target="#short"></span></label>
+                        <textarea class="form-control" rows="3" id="charityShortDescription" name="charityShortDescription" placeholder="Enter short description" th:inline="text">[[${charity.charityShortDescription}]]</textarea>
+                        <div id="short" class="collapse"><small class="text-muted">This description will appear on results card. How would you describe your charity in a sentence? Please write no more than 150 words. </small></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="charityDescription">About your charity: <span class="glyphicon glyphicon-question-sign" data-toggle="collapse" data-target="#long"></span></label>
+                        <textarea class="form-control" rows="5"  id="charityDescription" name="charityDescription" placeholder="Enter detailed description" th:inline="text">[[${charity.charityDescription}]]</textarea>
+                        <div id="long" class="collapse"><small class="text-muted">This description will appear on your Charity Page. Type as much as you like - there is no limit!</small></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoryList" class="form-control-label">Add causes your charity supports (split by comma , ): <span class="glyphicon glyphicon-question-sign" data-toggle="collapse" data-target="#causes"></span></label>
+                        <textarea class="form-control" rows="2"  id="categoryList" name="categoryList" placeholder="e.g. cats, dogs, sharks" th:inline="text">[[${charity.categoryList}]]
+                        </textarea>
+                        <div id="causes" class="collapse"><small class="text-muted">This will help potential donors quickly find causes they are interested in. Just list them with a comma separator.</small></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="6LdgIiYTAAAAAIei36c7w6_lY6BviXc5AXLKd64m"></div>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" /> I agree to the <a href="/terms.html" target="_blank">Terms and Conditions</a></label>
+                    </div>
+                    <button onclick="submit()" type="button" class="btn btn-default pull-center">Submit</button>
+                    <button onclick="preview()" type="button" class="btn btn-default pull-center">Preview</button>
+
+                    <script th:inline="javascript">
+                        /*<![CDATA[*/
+
+                        document.getElementById("categoryList").value = document.getElementById("categoryList").value.replace("[", "").replace("]", "").replace("[", "").replace("]", "");
+
+                        function preview() {
+                            console.log("updating charity");
+
+                            var id = window.location.search.substring(1).replace("id=", "");
+
+                            var charityName = document.getElementById("charityName").value;
+                            var charityRegNumber = document.getElementById("charityRegNumber").value;
+                            var charityContactName = document.getElementById("charityContactName").value;
+                            var charityTel = document.getElementById("charityTel").value;
+                            var charityAddress = document.getElementById("charityAddress").value;
+                            var charityWebsiteName = document.getElementById("charityWebsiteName").value;
+                            var email = document.getElementById("email").value;
+                            var employeesNo = document.getElementById("employeesNo").value;
+                            var averageDonations = document.getElementById("averageDonations").value;
+                            var charityShortDescription = document.getElementById("charityShortDescription").value;
+                            var charityDescription = document.getElementById("charityDescription").value;
+                            var categoryList = document.getElementById("categoryList").value.split(/,\s*/);
+
+                            console.log("categoryList " + categoryList);
+
+                            var rootURL = "http://localhost:9051";
+
+                            var url = rootURL + "/admin/preview" +
+                                    "?id=" + id +
+                                    "&charityName=" + charityName +
+                                    "&charityRegNumber=" + charityRegNumber +
+                                    "&charityContactName=" + charityContactName +
+                                    "&charityTel=" + charityTel +
+                                    "&charityAddress=" + charityAddress +
+                                    "&charityWebsiteName=" + charityWebsiteName +
+                                    "&email=" + email +
+                                    "&employeesNo=" + employeesNo +
+                                    "&averageDonations=" + averageDonations +
+                                    "&charityShortDescription=" + charityShortDescription +
+                                    "&charityDescription=" + charityDescription +
+                                    "&categoryList=" + categoryList;
+
+                            window.location.href = url;
+
+                        }
+
+                        function submit() {
+                            console.log("updating charity");
+
+                            var id = window.location.search.substring(1).replace("id=", "");
+
+                            var charityName = document.getElementById("charityName").value;
+                            var charityRegNumber = document.getElementById("charityRegNumber").value;
+                            var charityContactName = document.getElementById("charityContactName").value;
+                            var charityTel = document.getElementById("charityTel").value;
+                            var charityAddress = document.getElementById("charityAddress").value;
+                            var charityWebsiteName = document.getElementById("charityWebsiteName").value;
+                            var email = document.getElementById("email").value;
+                            var employeesNo = document.getElementById("employeesNo").value;
+                            var averageDonations = document.getElementById("averageDonations").value;
+                            var charityShortDescription = document.getElementById("charityShortDescription").value;
+                            var charityDescription = document.getElementById("charityDescription").value;
+                            var categoryList = document.getElementById("categoryList").value.split(/,\s*/);
+
+                            console.log("categoryList " + categoryList);
+
+                            var rootURL = "http://localhost:9051";
+
+                            $.ajax({
+                                url: rootURL + "/api/charity/" + id,
+                                type: 'PUT',
+                                dataType: "json",
+                                data: JSON.stringify({
+                                    id : id,
+                                    charityName : charityName,
+                                    registrationNumber : charityRegNumber,
+                                    charityContactName : charityContactName,
+                                    charityTel : charityTel,
+                                    charityAddress : charityAddress,
+                                    charityWebsiteName : charityWebsiteName,
+                                    charityEmail : email,
+                                    employeesNo : employeesNo,
+                                    averageDonations : averageDonations,
+                                    charityShortDescription : charityShortDescription,
+                                    charityDescription : charityDescription,
+                                    categoryList : categoryList
+                                }),
+                                contentType: "application/json"
+                            }).complete(function (data, statusText, xhr) {
+                                if (data.status === 200) {
+                                    alert("Successfully updated charity");
+                                } else {
+                                    alert("Error " + data.status + " occurred");
+                                }
+                            });
+                        }
+                        /*]]>*/
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /#page-content-wrapper -->
+
+
+</div>
+</div>
+
+</body>
+</html>

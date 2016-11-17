@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/general-style.css">
+    <link rel="stylesheet" type="text/css" href="css/add-charity2.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/forms/admin-login.js"></script>
+    <title>Add notes</title>
+</head>
+
+<body class="light-blue">
+<div class="container" width="500px" height="500px">
+    <div class="container-fluid" width="500px" height="500px">
+        <div class="container-fluid light-blue">
+            <div class="container form-container form-small" width="500px" height="500px">
+                <div class="result" width="500px" height="500px"></div>
+                <div class="blue2 top-margin-cut"><!--Header content container-->
+                    <img src="/img/settings.png" class="img-responsive img-circle center-block" width="100px" height="100px" />
+                    <h6 class="orator-header-medium text-center">Add a note:</h6>
+                </div><!--Header content container-->
+                <div class="myBackground" >
+                    <p id="charity_id"></p>
+                    <span class="notes-data"></span>
+                    <form role="form" id="formNotes">
+                        <div class="form-group">
+                            <label for="notes" class="form-control-label">Notes:</label>
+                            <textarea class="form-control" rows="8"  id="notes" name="notes" placeholder="Enter your notes"></textarea>
+
+                        </div>
+                    <button type ="submit" class="btn btn-default pull-center" style="margin-left: 40%" >Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#formNotes").submit(function () {
+        console.log("sending charity note update");
+        var id_first = window.location.search.substring(1).split("=");
+        var id = id_first[1];
+        console.log(id);
+        var note = document.getElementById("notes").value;
+        console.log(notes);
+
+        $.ajax({
+            url: "api/charity/notes/" + id,
+            type: 'PUT',
+            dataType: "json",
+            data: JSON.stringify({
+                id: id,
+                note: note
+            }),
+            contentType: "application/json"
+        }).complete(function (data, statusText, xhr) {
+            console.log(data);
+
+            if (data.status === 200) {
+                console.log("success");
+                alert("Message added.");
+            }else {
+                console.log(statusText + " ; " + xhr + data);
+            }
+        });
+        console.log("end");
+    })
+</script>
+
+</body>
+</html>

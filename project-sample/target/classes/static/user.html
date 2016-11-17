@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/general-style.css">
+    <link rel="stylesheet" type="text/css" href="css/add-charity.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/form.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <title>Register your charity</title>
+</head>
+
+
+<body class="light-blue" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!--NAVBAR-->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <img class="img-responsive" src="img/heart-gray.png" style="display: inline;" alt="" width="5%" height="5%"></img>
+                <p class="orator-header-small" style="display: inline;" >CHARITABLE</p>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a class="page-scroll" href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll pull-right" href="#about"><p class="orator-header-small" style="display: inline;" >Learn More</p></a>
+                </li>
+                <li>
+                    <a class="page-scroll pull-right" href="#register"><p class="orator-header-small" style="display: inline;" >Register</p></a>
+                </li>
+                <li>
+                    <a class="page-scroll pull-right" href="/admin/main?id=57a416993004ffd1bbafd6f4"><p class="orator-header-small" style="display: inline;" > Login</p></a>
+                </li>
+            </ul><!-- end dropdown-menu -->
+        </div>
+    </div>
+</nav>
+
+<div class="featurette" id="about"><!-- Left-Col Main Container -->
+    <h6 class="featurette-heading orator-header text-center">Hello, friend!
+        <span class="text-muted"> Let's help the world together!</span>
+    </h6>
+    <p class="lead"> Join us, let's change the world together! It really is that simple.</p>
+</div><!-- end Left-Col Main Container -->
+
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <img class="img-circled img-responsive left-margin" src="img/about-little1.png" width="45%" height="45%">
+                    </span>
+            <h4 class="service-heading">Why join in?</h4>
+            <p class="text-muted"></p>
+        </div>
+        <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                          <img class="img-circled img-responsive left-margin" src="img/about-little2.png" width="45%" height="45%">
+                    </span>
+            <h4 class="service-heading">How can I help?</h4>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+        </div>
+        <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                          <img class="img-circled img-responsive left-margin" src="img/about-little3.png" width="45%" height="45%">
+                    </span>
+            <h4 class="service-heading">How can you help me?</h4>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid light-blue" id="register">
+    <div class="container form-container">
+        <div class="result"></div>
+        <div class="myBackground card">
+            <form>
+                <h2 class="text-center orator-header-medium"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Register your charity</h2>
+                <hr/>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="charityName" class=" form-control-label">Charity Name:</label><br>
+                            <input type="text" id="charityName" class="wide-form" name="charityName" placeholder="Enter your charity name">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="charityRegNumber" class="form-control-label">Charity Registration number:</label><br>
+                            <input type="text" id="charityRegNumber" name="charityRegNumber" placeholder="Enter charity registration number">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="charityContactName" class="form-control-label">Contact Name:</label><br>
+                            <input type="text" id="charityContactName" name="charityContactName" placeholder="Enter contact name">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="charityTel" class="form-control-label">Telephone number:</label><br>
+                            <input type="tel" id="charityTel" name="charityTel" placeholder="Enter phone number">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="charityAddress" class="form-control-label">Address of your charity:</label><br>
+                            <input type="text" id="charityAddress" name="charityAddress" placeholder="e.g. Charity Street, Post Code, Country">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="charityWebsiteName" class="form-control-label">Website:</label><br>
+                            <input type="text" id="charityWebsiteName" name="charityWebsiteName" placeholder="Enter website">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="employeesNo" class="form-control-label">No of employees (approximately):</label><br>
+                            <input type="text" id="employeesNo" name="employeesNo" placeholder="e.g. 10">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="averageDonations" class="form-control-label">Average yearly income available for donations (in pounds):</label><br>
+                            <input type="text" id="averageDonations" name="averageDonations" placeholder="e.g. 150000">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="charityShortDescription" class=" form-control-label">Short description of charity: <span class="glyphicon glyphicon-question-sign" data-toggle="collapse" data-target="#short"></span></label>
+                    <textarea class="form-control" rows="3" id="charityShortDescription" name="charityShortDescription" placeholder="Enter short description"></textarea>
+                    <div id="short" class="collapse"><small class="text-muted">This description will appear on results card. How would you describe your charity in a sentence? Please write no more than 150 words. </small></div>
+                </div>
+                <div class="form-group">
+                    <label for="charityDescription">About your charity: <span class="glyphicon glyphicon-question-sign" data-toggle="collapse" data-target="#long"></span></label>
+                    <textarea class="form-control" rows="5"  id="charityDescription" name="charityDescription" placeholder="Enter detailed description"></textarea>
+                    <div id="long" class="collapse"><small class="text-muted">This description will appear on your Charity Page. Type as much as you like - there is no limit!</small></div>
+                </div>
+                <div class="form-group">
+                    <label for="categoryList" class="form-control-label">Add causes your charity supports: <span class="glyphicon glyphicon-question-sign" data-toggle="collapse" data-target="#causes"></span></label>
+                    <textarea class="form-control" rows="2"  id="categoryList" name="categoryList" placeholder="e.g. cats, dogs, sharks"></textarea>
+                    <div id="causes" class="collapse"><small class="text-muted">This will help potential donors quickly find causes they are interested in. Just list them with a comma separator.</small></div>
+                </div>
+                <div class="form-group">
+                    <div class="g-recaptcha" data-sitekey="6LdgIiYTAAAAAIei36c7w6_lY6BviXc5AXLKd64m"></div>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" /> I agree to the <a href="/terms.html" target="_blank">Terms and Conditions</a></label>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-default pull-center">
+            </form>
+        </div>
+    </div><!--End of sort body-->
+</div><!--End of sort box-->
+</div>
+
+
+<div class="container">
+    <div class="featurette" id="about"><!-- Left-Col Main Container -->
+        <img class="img-circled img-responsive pull-right" src="img/where.png" width="25%" height="25%">
+        <h6 class="featurette-heading">Unsure of something?
+            <span class="text-muted"></span>
+        </h6>
+        <p class="lead">Charitable aims to provide potential donors with a choice of charity they would like to donate to - large, small, poor, rich. We would love to hear from you! Therefore,
+            if there are any concerns, please do <a href="mailto:charitable2016@gmail.com">contact us</a>!</p>
+    </div><!-- end Left-Col Main Container -->
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="container" id="footer-container">
+                <div class="col-sm-12">
+                    <div class="container" id="first-footer">
+                        <div class="col-sm-2">
+                            <h6>Copyright &copy; 2016</h6>
+                            <p>ms915@imperial.ac.uk
+                                Designed by Magdalena for Imperial College project.</p>
+                        </div>
+                        <div class="col-sm-3 visible-sm visible-md visible-lg">
+                            <h6>About Charitable</h6>
+                            <p>Charitable is a proof-of concept application designed for the Msc Computer Science Individual Project module at Imperial College London. Forgive imperfections. </p>
+                            <div class="control-group">
+                                <div class="controls">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 visible-sm visible-md visible-lg">
+                            <h6>Other Links</h6>
+                            <ul class="unstyled">
+                                <li><a href="http://localhost:9051/general/account">Charitable Admin</a></li>
+                                <li><a href="#">Info</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Feedback</a></li>
+                                <li><a href="#">Sponsors</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-2">
+                            <h6>Follow</h6>
+                            <div id="share-buttons-footer">
+                                <ul class="unstyled">
+
+                                    <!-- Facebook -->
+                                    <a href="#"><img src="http://www.simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />Facebook</a>
+
+                                    <!-- Twitter -->
+                                    <a href="#" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />Twitter</a>
+
+                                    <!-- Google+ -->
+                                    <a href="#" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/google.png" alt="Google" />Google+</a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 visible-sm visible-md visible-lg">
+                            <h6>Legal jargon</h6>
+                            <p>Images <a href="http://www.freepik.com">designed by Freepik</a></p>
+                            <p>Work in progress - do not sue :)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--SCRIPTS-->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scrolling-nav.js"></script>
+</body>
+</html>

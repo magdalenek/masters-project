@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Bootstrap 3 -->
+    <link href="../../static/bootstrap-3/css/bootstrap.min.css"
+          th:href="@{/bootstrap-3/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+    <!-- Custom Style-->
+    <link href="../../static/css/general-style.css"
+          th:href="@{/css/general-style.css}" rel="stylesheet" media="screen" />
+</head>
+<body>
+
+<footer th:fragment="footer">
+    <div class="container">
+        <div class="row">
+            <div class="container" id="footer-container">
+                <div class="col-sm-12">
+                    <div class="container" id="first-footer">
+                        <div class="col-sm-2">
+                            <h6>Copyright &copy; 2016</h6>
+                            <p>ms915@imperial.ac.uk
+                                Designed by Magdalena for Imperial College project.</p>
+                        </div>
+                        <div class="col-sm-3 visible-sm visible-md visible-lg">
+                            <h6>About Charitable</h6>
+                            <p>Charitable is a proof-of concept application designed for the Msc Computer Science Individual Project module at Imperial College London. Forgive imperfections. </p>
+                            <div class="control-group">
+                                <div class="controls">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 visible-sm visible-md visible-lg">
+                            <h6>Other Links</h6>
+                            <ul class="unstyled">
+                                <li><a href="http://localhost:9051/admin-login.html">Charitable Admin</a></li>
+                                <li><a href="#">Info</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Feedback</a></li>
+                                <li><a href="#">Sponsors</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-2">
+                            <h6>Follow</h6>
+                            <div id="share-buttons-footer">
+                                <ul class="unstyled">
+
+                                    <!-- Facebook -->
+                                    <a href="#"><img src="http://www.simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />Facebook</a>
+
+                                    <!-- Twitter -->
+                                    <a href="#" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />Twitter</a>
+
+                                    <!-- Google+ -->
+                                    <a href="#" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/google.png" alt="Google" />Google+</a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 visible-sm visible-md visible-lg">
+                            <h6>Legal jargon</h6>
+                            <p>Images <a href="http://www.freepik.com">designed by Freepik</a></p>
+                            <p>Work in progress - do not sue :)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Charitable - view charity details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Bootstrap 3 -->
+    <link href="../../static/bootstrap-3/css/bootstrap.min.css"
+          th:href="@{/bootstrap-3/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+    <!-- Custom Style-->
+    <link href="../../static/css/general-style.css"
+          th:href="@{/css/general-style.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/add-charity.css"
+          th:href="@{/css/add-charity.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/search.css"
+          th:href="@{/css/search.css}" rel="stylesheet" media="screen" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<span th:replace="fragments/headerinc :: headerinc"></span>
+
+<div class="panel-heading banner" style="padding-top:1%;padding-bottom: 0;margin-top:2.1%;;margin-bottom:1.5%"><h2 class="orator-header-medium banner-font text-center"><span class="glyphicon glyphicon-info-sign"></span> THIS IS JUST A PREVIEW...</h2></div>
+<!-- Main Content -->
+
+<div class="container padding-top">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel-heading blue2" style="padding: 2%;margin-top:0;margin-left: 2.5%;margin-right: 2.5%"><!--header-->
+                <h3 class="orator-header pull-center title-text" style="display: inline;" th:text="${charity.charityName} "></h3>
+                <button type="button" class="btn btn-danger pull-right btn-lg" style="display: inline;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Donate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.title-text').each(function(){
+            var el= $(this);
+            var textLength = el.html().length;
+            if (textLength > 28) {
+                el.css('font-size', '25px');
+            }
+        });
+    </script>
+
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <!--header
+            <div class="panel-heading blue2" style="margin-right: 2.5%;margin-left: 2.5%">
+                <h3 class="panel-title text-center orator-header-small"><span class="glyphicon glyphicon-education"></span>Learn more</h3>
+            </div>
+            !-->
+            <div class="panel-heading white " style="padding: 2%;margin-right: 2.5%;margin-left: 2.5%;margin-bottom: 2%"><!--header-->
+                <div class="row">
+                    <div class="col-sm-9 white">
+                        <h6 class="orator-header-small">About</h6>
+                        <hr style="margin-right: 5%"/>
+                        <img th:src="@{/img/charity-micro.png}" class="img-responsive" style="margin-top:1%" width="95%" height="95%"/>
+                        <p class="lead" style="margin-right: 10%"><span th:text="${charity.charityDescription} "></span></p>
+                    </div>
+
+                    <div class="row">
+                        <div class="white">
+                            <div class="col-sm-3 white">
+                                <h6 class="orator-header-small">Contact details:</h6>
+                                <hr style="margin-right: 5%"/>
+                                <h5 class="pull-center"><span class="glyphicon glyphicon-file"></span> <span th:text="${charity.charityWebsiteName} "></span></h5>
+                                <h5 class="pull-center"><span class="glyphicon glyphicon-user"></span> <span th:text="${charity.charityContactName} "></span></h5>
+                                <h5 class="pull-center"><span class="glyphicon glyphicon-phone-alt"></span> <span th:text="${charity.charityTel} "></span></h5>
+                                <h5 class="pull-center"><span class="glyphicon glyphicon-globe"></span> <span th:text="${charity.charityAddress} "></span></h5>
+                                <br />
+                                <h6 class="orator-header-small">Stats:</h6>
+                                <hr style="margin-right: 5%"/>
+                                <h5><span class="glyphicon glyphicon-heart"></span> Number of Employees: <span class="text-center" th:text="${charity.employeesNo}">number</span></h5>
+                                <h5><span class="glyphicon glyphicon-piggy-bank"></span> Average Donations: <span class="text-center" style="padding: 0" th:text="'&pound;' + ${charity.averageDonations}"><span class="glyphicon glyphicon-gbp"> number</span></span></h5>
+                                <h5><span class="glyphicon glyphicon-calendar"></span> User donations to date: <span class="text-center text-center">&pound;0</span></h5>
+                                <br />
+                                <h6 class="orator-header-small">Supporting causes:</h6>
+                                <hr style="margin-right: 5%;"/>
+                                <ul>
+                                    <ul class="bullet-points">
+                                        <li th:each="item : ${charity.categoryList}" th:text="${item}">Item description here...</li>
+                                    </ul>
+                                </ul>
+                                <br />
+                                <h6 class="orator-header-small">Share the charity:</h6>
+                                <hr style="margin-right: 5%"/>
+                                <div id="share-buttons-footer">
+                                    <ul>
+
+                                        <!-- Facebook -->
+                                        <a href=""><img src="http://www.simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" /></a>
+
+                                        <!-- Twitter -->
+                                        <a href="#" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" /></a>
+
+                                        <!-- Google+ -->
+                                        <a href="#" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/google.png" alt="Google" /></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div class="container">
+        <div class="container">
+            <span th:replace="fragments/footer :: footer"></span>
+        </div>
+    </div>
+
+</div>
+<!-- Scripts -->
+<script type="text/css" src="../../js/jquery-3.min.js" th:href="@{/js/jquery-3.min.js}"></script>
+<script type="text/css" src="../../bootstrap-3/js/bootstrap.min.js" th:href="@{/bootstrap-3/js/bootstrap.min.js}"></script>
+
+</body>
+</html>
