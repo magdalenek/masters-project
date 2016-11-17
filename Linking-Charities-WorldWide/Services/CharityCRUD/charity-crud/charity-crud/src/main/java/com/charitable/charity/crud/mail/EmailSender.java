@@ -8,22 +8,21 @@ import javax.mail.internet.*;
 public class EmailSender {
 
     final String localhost = "http://localhost:9051";
-    final String username = "charitable2016@gmail.com";
+    final String username = "email";
     final String host = "smtp.gmail.com";
-    final String password = "Imperi@l123";
-    final String signature = "<br><br>Charitable, Imperial College London<br>" + "charitable2016@gmail.com";
+    final String password = "pass";
+    final String signature = "<br><br>Charitable, Imperial College London<br>";
 
     public EmailSender(){
     }
 
 
-    public void sendVerificationEmail(Charity charityToVerify){    //will take String to user email, will take string to token.
+    public void sendVerificationEmail(Charity charityToVerify){ 
         Properties properties = System.getProperties();
         setMail(properties);
 
-        String to = "magdalena_s@hotmail.co.uk";  //remove me
-        //String to = charityToVerify.getCharityEmail();
-        //add null or empty string "" check
+       
+        String to = charityToVerify.getCharityEmail();
 
         Session session = Session.getDefaultInstance(properties,
                 new javax.mail.Authenticator() {
@@ -60,7 +59,7 @@ public class EmailSender {
     }
 
 
-    public void sendWelcomeMessage(Charity charity) {    //will take String to user email, will take string to token.
+    public void sendWelcomeMessage(Charity charity) {  
 
         String to = charity.getCharityEmail();
         Properties properties = System.getProperties();
