@@ -14,6 +14,11 @@ The aim of this project was to develop a proof-of-concept product, providing the
 + Front End: Custom css design with Twitter Bootstrap, vanilla JavaScript, jQuery, d3.js, Thymeleaf.
 + Back end: Spring Boot, MongoDb, JavaMail, RESTful API.
 
+
+**Architecture Design:**
+[![Screen Shot 2016-11-17 at 13.50.39.png](https://s21.postimg.org/3qnqw84p3/Screen_Shot_2016_11_17_at_13_50_39.png)](https://postimg.org/image/4g6j8l58j/)
+
+
 **Main Features:**
 - Interactive selection of country the charity resides in from the animated globe
 - Charity Search
@@ -26,4 +31,4 @@ The aim of this project was to develop a proof-of-concept product, providing the
   -	Live filtering of data conducted in the front end
   -	Note-taking available for each entry
   
-![Admin](https://github.com/magdalenek/masters-project/raw/master/project-sample/view/admin.gif)
+  ![Admin](https://github.com/magdalenek/masters-project/raw/master/project-sample/view/admin.gif)
