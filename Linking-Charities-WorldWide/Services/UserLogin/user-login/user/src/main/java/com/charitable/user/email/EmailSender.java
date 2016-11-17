@@ -10,21 +10,20 @@ import javax.mail.internet.*;
 public class EmailSender {
 
     final String localhost = "http://localhost:9052";
-    final String username = "charitable2016@gmail.com";
+    final String username = "email";
     final String host = "smtp.gmail.com";
-    final String password = "Imperi@l123";
-    final String signature = "Charitable, Imperial College London<br>" + "charitable2016@gmail.com";
+    final String password = "pass";
+    final String signature = "Charitable, Imperial College London<br>";
 
     public EmailSender() {
     }
 
 
-    public void sendVerificationEmail(User user) {    //will take String to user email, will take string to token.
+    public void sendVerificationEmail(User user) {  
         Properties properties = System.getProperties();
         setMail(properties);
-
-        String to = "magdalena_s@hotmail.co.uk";  //remove me
-        //String to = user.getCharityEmail();
+        
+        String to = user.getCharityEmail();
 
         Session session = Session.getDefaultInstance(properties,
                 new javax.mail.Authenticator() {
@@ -120,7 +119,7 @@ public class EmailSender {
 
             message.setSubject("Oops.. Something went wrong :(");
 
-            String text = "We are very sorry, but we were unable to create an am,ount for you." +
+            String text = "We are very sorry, but we were unable to create an account for you." +
                     "But don't you worry yet - our automated system can sometimes be a little silly. Please keep on checking your email - we will be in touch with you shortly!";
 
             String html = text + signature;
