@@ -9,6 +9,8 @@
 
 The aim of this project was to develop a proof-of-concept product, providing the non-profit organisations around the world with an option to list themselves in an online platform. The intent behind the platform was to present the smaller charities with much needed exposure that they cannot often afford and so desperately need. Such a solution was additionally intended to provide the potential donors with an alternative choice of charities to donate to, and as a result helping twice - aiding the chosen cause and the charity as such.
 
+To learn more, see the full [Project Report](https://github.com/magdalenek/masters-project/tree/master/Linking-Charities-WorldWide/housekeeping/Report).
+
 
 **Selected Technologies Used:**
 + Front End: Custom css design with Twitter Bootstrap, vanilla JavaScript, jQuery, d3.js, Thymeleaf.
